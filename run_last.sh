@@ -24,15 +24,15 @@ samtools faidx /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta
 #aligns reads of each partial genome to the transdb database (which are the transcripts in filtered_Trinity.fasta), and converts the maf output into a sam file
 #lastal -Q1 -e120 transdb /path/to/reads.fq  | maf-convert sam > last/samplename.sam
 
-lastal -Q1 -e120 transdb /work/jpwlab/noto/dna_reads/Arica4*.fq | maf-convert sam > last/ARI4.sam
+lastal -Q1 -e120 transdb /work/jpwlab/noto/dna_reads/NAri4*.fq | maf-convert sam > last/ARI4.sam
 
-lastal -Q1 -e120 transdb /work/jpwlab/noto/dna_reads/Arica6*.fq | maf-convert sam > last/ARI6.sam
+lastal -Q1 -e120 transdb /work/jpwlab/noto/dna_reads/NAri6*.fq | maf-convert sam > last/ARI6.sam
 
-lastal -Q1 -e120 transdb /work/jpwlab/noto/dna_reads/Arica10*.fq | maf-convert sam > last/ARI10.sam
+lastal -Q1 -e120 transdb /work/jpwlab/noto/dna_reads/NAri10*.fq | maf-convert sam > last/ARI10.sam
 
-lastal -Q1 -e120 transdb /work/jpwlab/noto/dna_reads/Arica11*.fq | maf-convert sam > last/ARI11.sam
+lastal -Q1 -e120 transdb /work/jpwlab/noto/dna_reads/NAri11*.fq | maf-convert sam > last/ARI11.sam
 
-lastal -Q1 -e120 transdb /work/jpwlab/noto/dna_reads/Arica12*.fq | maf-convert sam > last/ARI12.sam
+lastal -Q1 -e120 transdb /work/jpwlab/noto/dna_reads/Ari12*.fq | maf-convert sam > last/ARI12.sam
 
 lastal -Q1 -e120 transdb /work/jpwlab/noto/dna_reads/Arg10*.fq | maf-convert sam > last/ARG10.sam
 
