@@ -24,6 +24,8 @@ samtools faidx /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta
 #aligns reads of each partial genome to the transdb database (which are the transcripts in filtered_Trinity.fasta), and converts the maf output into a sam file
 #lastal -Q1 -e120 transdb /path/to/reads.fq  | maf-convert sam > last/samplename.sam
 
+mkdir /scratch/keb27269/noto/last
+
 lastal -Q1 -e120 transdb /work/jpwlab/noto/dna_reads/NAri4*.fq | maf-convert sam > last/ARI4.sam
 
 lastal -Q1 -e120 transdb /work/jpwlab/noto/dna_reads/NAri6*.fq | maf-convert sam > last/ARI6.sam
