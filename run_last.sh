@@ -1,8 +1,8 @@
 #PBS -S /bin/bash
 #PBS -q batch
 #PBS -N last_noto
-#PBS -l nodes=1:ppn=16
-#PBS -l walltime=30:00:00:00
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=5:00:00:00
 #PBS -l mem=100gb
 #PBS -M keb27269@uga.edu
 #PBS -m ae
