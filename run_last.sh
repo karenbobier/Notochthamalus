@@ -26,21 +26,21 @@ samtools faidx /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta
 
 mkdir /scratch/keb27269/noto/last
 
-lastal -Q1 -e120 transdb /scratch/keb27269/noto/dna_reads/NAri4*.fq | maf-convert sam > last/ARI4.sam
+#lastal -Q1 -e120 transdb /scratch/keb27269/noto/dna_reads/NAri4*.fq | maf-convert sam > last/ARI4.sam
 
-lastal -Q1 -e120 transdb /scratch/keb27269/noto/dna_reads/NAri6*.fq | maf-convert sam > last/ARI6.sam
+#lastal -Q1 -e120 transdb /scratch/keb27269/noto/dna_reads/NAri6*.fq | maf-convert sam > last/ARI6.sam
 
-lastal -Q1 -e120 transdb /scratch/keb27269/noto/dna_reads/NAri10*.fq | maf-convert sam > last/ARI10.sam
+#lastal -Q1 -e120 transdb /scratch/keb27269/noto/dna_reads/NAri10*.fq | maf-convert sam > last/ARI10.sam
 
-lastal -Q1 -e120 transdb /scratch/keb27269/noto/dna_reads/NAri11*.fq | maf-convert sam > last/ARI11.sam
+lastal -Q1 -e120 transdb /scratch/keb27269/noto/dna_reads/NAR111*.fq | maf-convert sam > last/ARI11.sam #replace Nari11 with NAR111
 
-lastal -Q1 -e120 transdb /scratch/keb27269/noto/dna_reads/Ari12*.fq | maf-convert sam > last/ARI12.sam
+#lastal -Q1 -e120 transdb /scratch/keb27269/noto/dna_reads/Ari12*.fq | maf-convert sam > last/ARI12.sam
 
-lastal -Q1 -e120 transdb /scratch/keb27269/noto/dna_reads/Arg10*.fq | maf-convert sam > last/ARG10.sam
+#lastal -Q1 -e120 transdb /scratch/keb27269/noto/dna_reads/Arg10*.fq | maf-convert sam > last/ARG10.sam
 
-lastal -Q1 -e120 transdb /scratch/keb27269/noto/dna_reads/Arg18*.fq | maf-convert sam > last/ARG18.sam
+#lastal -Q1 -e120 transdb /scratch/keb27269/noto/dna_reads/Arg18*.fq | maf-convert sam > last/ARG18.sam
 
-lastal -Q1 -e120 transdb /scratch/keb27269/noto/dna_reads/Arg19*.fq | maf-convert sam > last/ARG19.sam
+#lastal -Q1 -e120 transdb /scratch/keb27269/noto/dna_reads/Arg19*.fq | maf-convert sam > last/ARG19.sam
 
 lastal -Q1 -e120 transdb /scratch/keb27269/noto/dna_reads/Arg21*.fq | maf-convert sam > last/ARG21.sam
 
