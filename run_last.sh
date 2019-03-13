@@ -2,7 +2,7 @@
 #PBS -q batch
 #PBS -N last_noto
 #PBS -l nodes=1:ppn=1
-#PBS -l walltime=5:00:00:00
+#PBS -l walltime=7:00:00:00
 #PBS -l mem=100gb
 #PBS -M keb27269@uga.edu
 #PBS -m ae
@@ -18,8 +18,8 @@ module load LAST/956-foss-2016b
 module load SAMtools/1.9-foss-2016b
 
 #Turn transcriptome into database (the reference to map against)
-lastdb -uNEAR transdb /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta
-samtools faidx /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta
+#lastdb -uNEAR transdb /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta
+#samtools faidx /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta
 
 #aligns reads of each partial genome to the transdb database (which are the transcripts in filtered_Trinity.fasta), and converts the maf output into a sam file
 #lastal -Q1 -e120 transdb /path/to/reads.fq  | maf-convert sam > last/samplename.sam
