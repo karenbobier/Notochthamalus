@@ -56,5 +56,5 @@ samtools sort ARG29.bam sortARG29
 samtools view -bt  /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta.fai ARI102.sam > ARI102.bam
 samtools sort ARI102.bam sortARI102
 
-samtools view -bt  /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta.fai ARI103.sam > ARI103.bam
-samtools sort ARI103.bam sortARI103
+#samtools view -bt  /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta.fai ARI103.sam > ARI103.bam
+#samtools sort ARI103.bam sortARI103
