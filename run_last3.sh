@@ -16,6 +16,7 @@ cd $basedir
 module load LAST/956-foss-2016b
 #module load LAST/959-foss-2018a
 module load SAMtools/1.9-foss-2016b
+module load BCFtools/1.9-foss-2016b
 
 mkdir /scratch/keb27269/noto/last/consensus/
 
