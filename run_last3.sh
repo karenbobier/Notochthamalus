@@ -2,7 +2,7 @@
 #PBS -q batch
 #PBS -N last3_noto
 #PBS -l nodes=1:ppn=1
-#PBS -l walltime=7:00:00:00
+#PBS -l walltime=4:00:00:00
 #PBS -l mem=100gb
 #PBS -M keb27269@uga.edu
 #PBS -m abe
