@@ -20,30 +20,30 @@ module load BCFtools/1.9-foss-2016b
 
 mkdir /scratch/keb27269/noto/last/consensus/
 
-samtools mpileup -uf filtered_Trinity.fasta sortARI4.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARI4.fq
+bcftools mpileup -uf /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta sortARI4.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARI4.fq
 
-samtools mpileup -uf filtered_Trinity.fasta sortARI6.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARI6.fq
+bcftools mpileup -uf /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta sortARI6.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARI6.fq
 
-samtools mpileup -uf filtered_Trinity.fasta sortARI10.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARI10.fq
+bcftools mpileup -uf /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta sortARI10.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARI10.fq
 
-samtools mpileup -uf filtered_Trinity.fasta sortARI11.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARI11.fq
+bcftools mpileup -uf /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta sortARI11.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARI11.fq
 
-samtools mpileup -uf filtered_Trinity.fasta sortARI12.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARI12.fq
+bcftools mpileup -uf /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta sortARI12.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARI12.fq
 
-samtools mpileup -uf filtered_Trinity.fasta sortARG10.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARG10.fq
+bcftools mpileup -uf /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta sortARG10.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARG10.fq
 
-samtools mpileup -uf filtered_Trinity.fasta sortARG18.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARG18.fq
+bcftools mpileup -uf /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta sortARG18.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARG18.fq
 
-samtools mpileup -uf filtered_Trinity.fasta sortARG19.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARG19.fq
+bcftools mpileup -uf /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta sortARG19.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARG19.fq
 
-samtools mpileup -uf filtered_Trinity.fasta sortARG21.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARG21.fq
+bcftools mpileup -uf /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta sortARG21.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARG21.fq
 
-samtools mpileup -uf filtered_Trinity.fasta sortARG25.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARG25.fq
+bcftools mpileup -uf /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta sortARG25.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARG25.fq
 
-samtools mpileup -uf filtered_Trinity.fasta sortARG27.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARG27.fq
+bcftools mpileup -uf /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta sortARG27.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARG27.fq
 
-samtools mpileup -uf filtered_Trinity.fasta sortARG29.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARG29.fq
+bcftools mpileup -uf /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta sortARG29.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARG29.fq
 
-samtools mpileup -uf filtered_Trinity.fasta sortARI102.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARI102.fq
+bcftools mpileup -uf /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta sortARI102.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARI102.fq
 
-#samtools mpileup -uf filtered_Trinity.fasta sortARI103.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARI103.fq
+#bcftools mpileup -uf /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta sortARI103.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARI103.fq
