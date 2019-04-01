@@ -19,5 +19,5 @@ module load LAST/959-foss-2018a
 module load SAMtools/1.9-foss-2016b
 module load BCFtools/1.9-foss-2016b
 
-samtools mpileup -uf filtered_Trinity.fasta /scratch/keb27269/noto/last/sort* | bcftools call -mv > varLAST.raw.vcf
+samtools mpileup -uf /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta /scratch/keb27269/noto/last/sort* | bcftools call -mv > varLAST.raw.vcf
 bcftools filter -s LowQual -e '%QUAL<20 || DP>100' varLAST.raw.vcf  > varLAST.flt.vcf
