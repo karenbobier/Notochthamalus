@@ -17,5 +17,4 @@ module load TransDecoder/2.1.0-foss-2016b-Perl-5.24.1
 #module load HMMER/3.1b2-foss-2016b
 #module load BLAST+/2.7.1-foss-2016b-Python-2.7.14
 
-TransDecoder.LongOrfs -t /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta \
--m 100 --cpu 20 -T
+TransDecoder.LongOrfs -t /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta -m 100 --cpu 20
