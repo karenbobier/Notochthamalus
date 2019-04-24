@@ -18,7 +18,7 @@ module load HMMER/3.1b2-foss-2016b
 module load BLAST+/2.7.1-foss-2016b-Python-2.7.14
 
 blastp -query /scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder_dir/longest_orfs.pep  \
-    -db /scratch/keb27269/noto/blastdb/uniprot_sprot.fasta  -max_target_seqs 1 \
+    -db blastdb/uniprot_sprot.fasta  -max_target_seqs 1 \
     -outfmt 6 -evalue 1e-5 -num_threads 20 > blastp.outfmt6
 
 hmmscan --cpu 20 --domtblout /scratch/keb27269/noto/pfam_db/pfam.domtblout /scratch/keb27269/noto/pfam_db/Pfam-A.hmm /scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder_dir/longest_orfs.pep
