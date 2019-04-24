@@ -1,13 +1,13 @@
 #PBS -S /bin/bash
 #PBS -q highmem_q
-#PBS -N 1_transdecoder_noto
+#PBS -N 2_transdecoder_noto
 #PBS -l nodes=1:ppn=20
 #PBS -l walltime=30:00:00:00
 #PBS -l mem=200gb
 #PBS -M keb27269@uga.edu
 #PBS -m abe
-#PBS -o $HOME/1_transdecoder_noto.out.$PBS_JOBID
-#PBS -e $HOME/1_transdecoder_noto.err.$PBS_JOBID
+#PBS -o $HOME/2_transdecoder_noto.out.$PBS_JOBID
+#PBS -e $HOME/2_transdecoder_noto.err.$PBS_JOBID
 
 basedir="/scratch/keb27269/noto/"
 #mkdir $basedir
