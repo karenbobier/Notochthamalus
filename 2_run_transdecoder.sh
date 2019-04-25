@@ -2,7 +2,7 @@
 #PBS -q highmem_q
 #PBS -N 2_transdecoder_noto
 #PBS -l nodes=1:ppn=20
-#PBS -l walltime=30:00:00:00
+#PBS -l walltime=3:00:00:00
 #PBS -l mem=200gb
 #PBS -M keb27269@uga.edu
 #PBS -m abe
