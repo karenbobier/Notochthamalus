@@ -21,6 +21,8 @@ module load BLAST+/2.7.1-foss-2016b-Python-2.7.14
 #    -db uniprot_sprot.fasta  -max_target_seqs 1 \
 #    -outfmt 6 -evalue 1e-5 -num_threads 20 > blastp.outfmt6
 
+#hmmpress /scratch/keb27269/noto/Pfam-A.hmm
+
 hmmscan --cpu 20 --domtblout pfam.domtblout /scratch/keb27269/noto/Pfam-A.hmm /scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder_dir/longest_orfs.pep
 
 TransDecoder.Predict -t /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta --retain_pfam_hits pfam.domtblout --retain_blastp_hits blastp.outfmt6
