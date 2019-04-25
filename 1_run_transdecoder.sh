@@ -17,4 +17,13 @@ module load TransDecoder/2.1.0-foss-2016b-Perl-5.24.1
 #module load HMMER/3.1b2-foss-2016b
 #module load BLAST+/2.7.1-foss-2016b-Python-2.7.14
 
-TransDecoder.LongOrfs -t /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta -m 100 
+TransDecoder.LongOrfs -t /scratch/keb27269/noto/gacrctest2/assemblies/noto_1.5.ORP.fasta -m 100
+
+
+#################################
+### Done preparing long ORFs.  ###
+##################################
+
+#        Use file: noto_1.5.ORP.fasta.transdecoder_dir/longest_orfs.pep  for Pfam and/or BlastP searches to enable homology-based coding region identification.
+
+#        Then, run TransDecoder.Predict for your final coding region predictions.
