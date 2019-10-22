@@ -5,7 +5,7 @@
 #PBS -l walltime=7:00:00:00
 #PBS -l mem=100gb
 #PBS -M keb27269@uga.edu
-#PBS -m ae
+#PBS -m abe
 #PBS -o $HOME/last.out.$PBS_JOBID
 #PBS -e $HOME/last.err.$PBS_JOBID
 
