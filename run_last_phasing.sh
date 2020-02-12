@@ -24,28 +24,30 @@ module load BCFtools/1.9-foss-2016b
 
 #samtools phase /scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds sortARI4.bam > phased/ARI4_phased.fq
 
-samtools phase sortARI4.bam -b /phased/phasedARI4
+samtools phase sortARI4.bam -b phasedARI4
 
-samtools phase sortARI6.bam -b /phased/phasedARI6
+samtools phase sortARI6.bam -b phasedARI6
 
-samtools phase sortARI10.bam -b /phased/phasedARI10
+samtools phase sortARI10.bam -b phasedARI10
 
-samtools phase sortARI11.bam -b /phased/phasedARI11
+samtools phase sortARI11.bam -b phasedARI11
 
-samtools phase sortARI12.bam -b /phased/phasedARI12
+samtools phase sortARI12.bam -b phasedARI12
 
-samtools phase sortARG10.bam -b /phased/phasedARG10
+samtools phase sortARG10.bam -b phasedARG10
 
-samtools phase sortARG18.bam -b /phased/phasedARG18
+samtools phase sortARG18.bam -b phasedARG18
 
-samtools phase sortARG19.bam -b /phased/phasedARG19
+samtools phase sortARG19.bam -b phasedARG19
 
-samtools phase sortARG21.bam -b /phased/phasedARG21
+samtools phase sortARG21.bam -b phasedARG21
 
-samtools phase sortARG25.bam -b /phased/phasedARG25
+samtools phase sortARG25.bam -b phasedARG25
 
-samtools phase sortARG27.bam -b /phased/phasedARG27
+samtools phase sortARG27.bam -b phasedARG27
 
-samtools phase sortARG29.bam -b /phased/phasedARG29
+samtools phase sortARG29.bam -b phasedARG29
 
-samtools phase sortARI102.bam -b /phased/phasedARI102
+samtools phase sortARI102.bam -b phasedARI102
+
+mv phasedA* phased
