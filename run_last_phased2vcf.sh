@@ -28,9 +28,9 @@ module load VCFtools/0.1.15-foss-2016b-Perl-5.24.1
 #bcftools mpileup -Ou -f /scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds phased/phasedARI12.0.bam  phased/phasedARI12.1.bam | bcftools call -m -o ./multiallelic/outARI12.vcf -O v
 #bcftools mpileup -Ou -f /scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds phased/phasedARG10.0.bam  phased/phasedARG10.1.bam | bcftools call -m -o ./multiallelic/outARG10.vcf -O v
 #bcftools mpileup -Ou -f /scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds phased/phasedARG18.0.bam  phased/phasedARG18.1.bam | bcftools call -m -o ./multiallelic/outARG18.vcf -O v
-bcftools mpileup -Ou -f /scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds phased/phasedARG19.0.bam  phased/phasedARG19.1.bam | bcftools call -m -o ./multiallelic/outARIG19.vcf -O v
+#bcftools mpileup -Ou -f /scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds phased/phasedARG19.0.bam  phased/phasedARG19.1.bam | bcftools call -m -o ./multiallelic/outARG19.vcf -O v
 #bcftools mpileup -Ou -f /scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds phased/phasedARG21.0.bam  phased/phasedARG21.1.bam | bcftools call -m -o ./multiallelic/outARG21.vcf -O v
-bcftools mpileup -Ou -f /scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds phased/phasedARG25.0.bam  phased/phasedARG25.1.bam | bcftools call -m -o ./multiallelic/outARG25.vcf -O v
+#bcftools mpileup -Ou -f /scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds phased/phasedARG25.0.bam  phased/phasedARG25.1.bam | bcftools call -m -o ./multiallelic/outARG25.vcf -O v
 #bcftools mpileup -Ou -f /scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds phased/phasedARG27.0.bam  phased/phasedARG27.1.bam | bcftools call -m -o ./multiallelic/outARG27.vcf -O v
 #bcftools mpileup -Ou -f /scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds phased/phasedARG29.0.bam  phased/phasedARG29.1.bam | bcftools call -m -o ./multiallelic/outARG29.vcf -O v
 #bcftools mpileup -Ou -f /scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds phased/phasedARI102.0.bam  phased/phasedARI102.1.bam | bcftools call -m -o ./multiallelic/outARI102.vcf -O v
@@ -51,12 +51,12 @@ ARI102
 "
 
 #need to index before running merge
-for i in $NAMES
-do
-bgzip multiallelic/out$i.vcf
-tabix multiallelic/out$i.vcf.gz
-done
+#for i in $NAMES
+#do
+#bgzip multiallelic/out$i.vcf
+#tabix multiallelic/out$i.vcf.gz
+#done
 #merge all individual.vcf files into one vcf
-vcf-merge multiallelic/*.vcf >  all.phased.raw.vcf
+vcf-merge multiallelic/*.vcf.gz >  all.phased.raw.vcf
 
 bcftools filter -s LowQual -e '%QUAL<20 || DP>100' all.phased.raw.vcf  > all.phased.flt.vcf
