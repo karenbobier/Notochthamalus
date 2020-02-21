@@ -59,4 +59,4 @@ ARI102
 #merge all individual.vcf files into one vcf
 #vcf-merge multiallelic/*.vcf.gz |  bgzip -c > all.phased.raw.vcf.gz
 
-bcftools filter -s LowQual -e '%QUAL<20 || DP>100' all.phased.raw.vcf.gz |bgzip -c > > all.phased.flt.vcf.gz
+bcftools filter -s LowQual -e '%QUAL<20 || DP>100' all.phased.raw.vcf.gz |bgzip -c > all.phased.flt.vcf.gz
