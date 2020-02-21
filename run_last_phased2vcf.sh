@@ -2,8 +2,8 @@
 #PBS -q batch
 #PBS -N last3_noto
 #PBS -l nodes=1:ppn=1
-#PBS -l walltime=4:00:00:00
-#PBS -l mem=100gb
+#PBS -l walltime=6:00:00:00
+#PBS -l mem=200gb
 #PBS -M keb27269@uga.edu
 #PBS -m abe
 #PBS -o $HOME/last_phase.out.$PBS_JOBID
