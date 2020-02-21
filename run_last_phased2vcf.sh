@@ -57,6 +57,6 @@ ARI102
 #tabix multiallelic/out$i.vcf.gz
 #done
 #merge all individual.vcf files into one vcf
-vcf-merge multiallelic/*.vcf.gz |  bgzip -c > all.phased.raw.vcf.gz
+#vcf-merge multiallelic/*.vcf.gz |  bgzip -c > all.phased.raw.vcf.gz
 
-#bcftools filter -s LowQual -e '%QUAL<20 || DP>100' all.phased.raw.vcf  > all.phased.flt.vcf
+bcftools filter -s LowQual -e '%QUAL<20 || DP>100' all.phased.raw.vcf.gz |bgzip -c > > all.phased.flt.vcf.gz
