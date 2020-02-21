@@ -1,7 +1,7 @@
 #PBS -S /bin/bash
 #PBS -q  highmem_q
 #PBS -N last3_noto
-#PBS -l nodes=1:ppn=1
+#PBS -l nodes=1:ppn=3
 #PBS -l walltime=6:00:00:00
 #PBS -l mem=200gb
 #PBS -M keb27269@uga.edu
