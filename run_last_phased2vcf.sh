@@ -1,5 +1,5 @@
 #PBS -S /bin/bash
-#PBS -q batch
+#PBS -q  highmem_q
 #PBS -N last3_noto
 #PBS -l nodes=1:ppn=1
 #PBS -l walltime=6:00:00:00
