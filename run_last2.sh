@@ -45,7 +45,7 @@ samtools view -bt  /scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds.fa
 samtools sort ARG21.bam -o sortARG21.bam
 
 samtools view -bt  /scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds.fai ARG25.sam > ARG25.bam
-samtools sort ARG21.bam -o sortARG25.bam
+samtools sort ARG25.bam -o sortARG25.bam
 
 samtools view -bt  /scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds.fai ARG27.sam > ARG27.bam
 samtools sort ARG27.bam -o sortARG27.bam
