@@ -1,9 +1,9 @@
 #PBS -S /bin/bash
-#PBS -q  highmem_q
+#PBS -q batch
 #PBS -N noto_gakt2
-#PBS -l nodes=1:ppn=12
+#PBS -l nodes=1:ppn=1
 #PBS -l walltime=6:00:00:00
-#PBS -l mem=400gb
+#PBS -l mem=50gb
 #PBS -M keb27269@uga.edu
 #PBS -m abe
 #PBS -o $HOME/noto_gatk2.out.$PBS_JOBID
@@ -50,25 +50,3 @@ echo "time gatk HaplotypeCaller \
 qsub ${OUT}
 
 done
-
-
-################################################################################
-#combine vcf files into one
-################################################################################
-
-time gatk CombineGVCFs \
- -O ${basedir}/D1_cohortNewRef.g.vcf \
- -R ${ref_genome} \
- --variant ${basedir}/sortARI4_haplotypes.g.vcf \
- --variant ${basedir}/sortARI6_haplotypes.g.vcf \
- --variant ${basedir}/sortARI10_haplotypes.g.vcf \
- --variant ${basedir}/sortARI11_haplotypes.g.vcf \
- --variant ${basedir}/sortARI12_haplotypes.g.vcf \
- --variant ${basedir}/sortARI102_haplotypes.g.vcf \
- --variant ${basedir}/sortARG10_haplotypes.g.vcf \
- --variant ${basedir}/sortARG18_haplotypes.g.vcf \
- --variant ${basedir}/sortARG19_haplotypes.g.vcf \
- --variant ${basedir}/sortARG21_haplotypes.g.vcf \
- --variant ${basedir}/sortARG25_haplotypes.g.vcf \
- --variant ${basedir}/sortARG27_haplotypes.g.vcf \
- --variant ${basedir}/sortARG29_haplotypes.g.vcf
