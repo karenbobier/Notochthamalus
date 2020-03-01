@@ -18,6 +18,8 @@ cd $basedir
 module load SAMtools/1.9-foss-2016b
 module load  picard/2.4.1-Java-1.8.0_144
 module load Python/3.5.2-foss-2016b
+#location of GATK module
+GATK_module="GATK/4.0.3.0-Java-1.8.0_144"
 
 #set path to reference genome (noto transcritome cds file)
 ref_genome="/scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds"
@@ -44,7 +46,7 @@ echo "" >> ${OUT}
 echo "time gatk HaplotypeCaller \
 -R ${ref_genome} \
 -ERC GVCF \
--I ${raw_data}/${BASE}_pipedNewRef.bam \
+-I ${raw_data}/${BASE}.bam \
 -ploidy 2 \
 -O ${output_directory}/${BASE}_haplotypes.g.vcf" >> ${OUT}
 qsub ${OUT}
