@@ -22,7 +22,7 @@ module load Python/3.5.2-foss-2016b
 GATK_module="GATK/4.0.3.0-Java-1.8.0_144"
 
 #set path to reference genome (noto transcritome cds file)
-ref_genome="/scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds"
+ref_genome="/scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds.fasta"
 
 ################################################################################
 #use gatk haplotype caller
