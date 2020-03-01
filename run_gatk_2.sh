@@ -53,9 +53,9 @@ echo "" >> ${OUT}
 echo "time gatk HaplotypeCaller \
 -R ${ref_genome} \
 -ERC GVCF \
--I ${raw_data}/${BASE}_removedDuplicates.bam \
+-I ${basedir}/${BASE}_removedDuplicates.bam \
 -ploidy 2 \
--O ${output_directory}/${BASE}_haplotypes.g.vcf" >> ${OUT}
+-O ${basedir}/${BASE}_haplotypes.g.vcf" >> ${OUT}
 qsub ${OUT}
 
 done
