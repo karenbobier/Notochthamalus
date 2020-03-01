@@ -21,6 +21,13 @@ module load Python/3.5.2-foss-2016b
 #location of GATK module
 GATK_module="GATK/4.0.3.0-Java-1.8.0_144"
 
+#create a .dict file for cds reference
+#java -Xmx20g -classpath "/usr/local/apps/eb/picard/2.4.1-Java-1.8.0_144" -jar  \
+#/usr/local/apps/eb/picard/2.4.1-Java-1.8.0_144/picard.jar CreateSequenceDictionary \
+#       R="/scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds.fasta" \
+#       O="/scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds.dict"
+
+
 #set path to reference genome (noto transcritome cds file)
 ref_genome="/scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds.fasta"
 
@@ -46,7 +53,7 @@ echo "" >> ${OUT}
 echo "time gatk HaplotypeCaller \
 -R ${ref_genome} \
 -ERC GVCF \
--I ${raw_data}/${BASE}.bam \
+-I ${raw_data}/${BASE}_removedDuplicates.bam \
 -ploidy 2 \
 -O ${output_directory}/${BASE}_haplotypes.g.vcf" >> ${OUT}
 qsub ${OUT}
