@@ -55,7 +55,7 @@ echo "time gatk HaplotypeCaller \
 -ERC GVCF \
 -I ${basedir}${BASE}_removedDuplicates.bam \
 -ploidy 2 \
--sample_name ${BASE} \
+-sample-name ${BASE} \
 -O ${basedir}${BASE}_haplotypes.g.vcf" >> ${OUT}
 qsub ${OUT}
 
