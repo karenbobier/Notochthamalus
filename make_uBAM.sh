@@ -1,4 +1,4 @@
-Arg29#PBS -S /bin/bash
+#PBS -S /bin/bash
 #PBS -q  highmem_q
 #PBS -N noto_gakt1
 #PBS -l nodes=1:ppn=6
@@ -16,10 +16,10 @@ basedir="/scratch/keb27269/noto/"
 cd $basedir
 
 #load programs
-module load SAMtools/1.9-foss-2016b
+samtools_module="SAMtools/1.9-foss-2016b"
 module load Python/3.5.2-foss-2016b
 #location of picard module
-picard_module=  "picard/2.4.1-Java-1.8.0_144"
+picard_module="picard/2.4.1-Java-1.8.0_144"
 #location of GATK module
 GATK_module="GATK/4.0.3.0-Java-1.8.0_144"
 #location of BWA module
@@ -80,7 +80,7 @@ java -Xmx20g -classpath "/usr/local/apps/eb/picard/2.16.0-Java-1.8.0_144" -jar  
     OUTPUT=${basedir}/ubams/${BASE}_fastqtosam.bam \
     READ_GROUP_NAME=${BASE} \
     SAMPLE_NAME=${BASE} \
-    LIBRARY_NAME=Noto \
+    LIBRARY_NAME=${BASE} \
     PLATFORM=illumina
 
 done
