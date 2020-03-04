@@ -29,6 +29,8 @@ module load ${bwa_module}
 module load ${samtools_module}
 module load ${GATK_module}
 
+#This script will Generate a SAM file containing aligned reads from fastq sequencing files
+
 #set path to reference genome (noto transcritome cds file)
 ref_genome="/scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds.fasta"
 #bwa index ${ref_genome}
