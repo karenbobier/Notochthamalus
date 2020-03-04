@@ -29,7 +29,7 @@ module load ${bwa_module}
 module load ${samtools_module}
 module load ${GATK_module}
 
-#this script will convert to BAM, and sort 
+#this script will convert to BAM, and sort
 
 
 #set path to reference genome (noto transcritome cds file)
