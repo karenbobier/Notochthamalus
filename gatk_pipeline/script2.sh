@@ -41,15 +41,15 @@ ref_genome="/scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds.fasta"
 #     OUTPUT=sorted_reads.bam \
 #     SORT_ORDER=coordinate
 
-mkdir ${basedir}/sorted_reads
+#mkdir ${basedir}/sorted_reads
 
 for file in ${basedir}/aligned_reads/*_aligned_reads.sam
 do
 FBASE=$(basename $file _aligned_reads.sam)
-BASE=${FBASE%.bam}
+BASE=${FBASE%.sam}
 time java -Xmx20g -classpath "/usr/local/apps/eb/picard/2.16.0-Java-1.8.0_144" -jar \
 /usr/local/apps/eb/picard/2.16.0-Java-1.8.0_144/picard.jar SortSam \
-    INPUT=${basedir}/aligned)reads/${BASE}_aligned_reads.sam \
-    OUTPUT=${basedir}/sorted_reads/${BASE}_sorted_reads.bam \
+    INPUT=${basedir}aligned_reads/${BASE}_aligned_reads.sam \
+    OUTPUT=${basedir}sorted_reads/${BASE}_sorted_reads.bam \
     SORT_ORDER=coordinate
 done
