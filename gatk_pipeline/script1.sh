@@ -37,6 +37,13 @@ ref_genome="/scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds.fasta"
 
 #readgroup info format
 #@RG\tID:group1\tSM:sample1\tPL:illumina\tLB:lib1\tPU:unit1
+#ID  read group IDs are composed using the flowcell name and lane number
+#
+#header of seqs in fastq files
+#@HISEQ:63:D239TACXX:8:1101:2246:2228 1:N:0:ATCACG
+#@<instrument>:<run number>:<flowcell ID>:<lane>:<tile>:<x-pos>:<y-pos> <read>:<is filtered>:<control number>:<sample number>
+#ID='head -n1 dna_reads/ARG10_R1_001.fastq |cut -d "@" -f2 | cut -d ":" -f 3-4'
+
 #mkdir ${basedir}/aligned_reads
 
 for file in ${basedir}/dna_reads/*_R1_001.fastq
