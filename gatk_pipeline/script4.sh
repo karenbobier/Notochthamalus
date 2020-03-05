@@ -35,6 +35,13 @@ module load ${GATK_module}
 #set path to reference genome (noto transcritome cds file)
 ref_genome="/scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds.fasta"
 
+#create a .dict file for cds reference
+#java -Xmx20g -classpath "/usr/local/apps/eb/picard/2.4.1-Java-1.8.0_144" -jar  \
+#/usr/local/apps/eb/picard/2.4.1-Java-1.8.0_144/picard.jar CreateSequenceDictionary \
+#       R="/scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds.fasta" \
+#       O="/scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds.dict"
+
+
 mkdir ${basedir}gvcfs
 
 #loop to make scripts to run haplotpe caller
