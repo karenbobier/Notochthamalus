@@ -51,3 +51,12 @@ O=${basedir}removed_duplicates/${BASE}_removedDuplicates.bam \
 M=${basedir}removed_duplicates/${BASE}_removedDupsMetrics.txt
 
 done
+
+
+#index the bam files
+for file in ${basedir}removed_duplicates/*_removedDuplicates.bam
+do
+  FBASE=$(basename $file _removedDuplicates.bam)
+  BASE=${FBASE%.bam}
+samtools index ${basedir}removed_duplicates/${BASE}_removedDuplicates.bam
+done
