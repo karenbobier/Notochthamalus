@@ -38,19 +38,19 @@ module load ${GATK_module}
 time gatk CombineGVCFs \
  -O ${basedir}noto_all_invd.g.vcf \
  -R ${ref_genome} \
- --variant ${basedir}/sortARI4_haplotypes.g.vcf \
- --variant ${basedir}/sortARI6_haplotypes.g.vcf \
- --variant ${basedir}/sortARI10_haplotypes.g.vcf \
- --variant ${basedir}/sortARI11_haplotypes.g.vcf \
- --variant ${basedir}/sortARI12_haplotypes.g.vcf \
- --variant ${basedir}/sortARI102_haplotypes.g.vcf \
- --variant ${basedir}/sortARG10_haplotypes.g.vcf \
- --variant ${basedir}/sortARG18_haplotypes.g.vcf \
- --variant ${basedir}/sortARG19_haplotypes.g.vcf \
- --variant ${basedir}/sortARG21_haplotypes.g.vcf \
- --variant ${basedir}/sortARG25_haplotypes.g.vcf \
- --variant ${basedir}/sortARG27_haplotypes.g.vcf \
- --variant ${basedir}/sortARG29_haplotypes.g.vcf
+ --variant ${basedir}gvcfs/sortARI4_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/sortARI6_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/sortARI10_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/sortARI11_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/sortARI12_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/sortARI102_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/sortARG10_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/sortARG18_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/sortARG19_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/sortARG21_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/sortARG25_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/sortARG27_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/sortARG29_haplotypes.g.vcf
 
 ###################################################################################################
 ### Jointly genotype samples to identify consensus sequences
