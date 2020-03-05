@@ -41,19 +41,19 @@ ref_genome="/scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds.fasta"
 time gatk CombineGVCFs \
  -O ${basedir}noto_all_invd.g.vcf \
  -R ${ref_genome} \
- --variant ${basedir}gvcfs/sortARI4_haplotypes.g.vcf \
- --variant ${basedir}gvcfs/sortARI6_haplotypes.g.vcf \
- --variant ${basedir}gvcfs/sortARI10_haplotypes.g.vcf \
- --variant ${basedir}gvcfs/sortARI11_haplotypes.g.vcf \
- --variant ${basedir}gvcfs/sortARI12_haplotypes.g.vcf \
- --variant ${basedir}gvcfs/sortARI102_haplotypes.g.vcf \
- --variant ${basedir}gvcfs/sortARG10_haplotypes.g.vcf \
- --variant ${basedir}gvcfs/sortARG18_haplotypes.g.vcf \
- --variant ${basedir}gvcfs/sortARG19_haplotypes.g.vcf \
- --variant ${basedir}gvcfs/sortARG21_haplotypes.g.vcf \
- --variant ${basedir}gvcfs/sortARG25_haplotypes.g.vcf \
- --variant ${basedir}gvcfs/sortARG27_haplotypes.g.vcf \
- --variant ${basedir}gvcfs/sortARG29_haplotypes.g.vcf
+ --variant ${basedir}gvcfs/ARI4_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/ARI6_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/ARI10_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/ARI11_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/ARI12_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/ARI102_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/ARG10_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/ARG18_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/ARG19_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/ARG21_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/ARG25_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/ARG27_haplotypes.g.vcf \
+ --variant ${basedir}gvcfs/ARG29_haplotypes.g.vcf
 
 ###################################################################################################
 ### Jointly genotype samples to identify consensus sequences
