@@ -33,6 +33,9 @@ module load ${GATK_module}
 #this script willl combine the individual gvcf files into one gvcf
 ################################################################################
 
+#set path to reference genome (noto transcritome cds file)
+ref_genome="/scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds.fasta"
+
 #combine vcf files into one
 
 time gatk CombineGVCFs \
