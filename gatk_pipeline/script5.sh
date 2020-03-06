@@ -32,6 +32,7 @@ module load ${GATK_module}
 ################################################################################
 #this script willl combine the individual gvcf files into one gvcf
 ################################################################################
+#note  this took 16.5 hrs to run for 13 diploids
 
 #set path to reference genome (noto transcritome cds file)
 ref_genome="/scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds.fasta"
