@@ -44,7 +44,7 @@ FBASE=$(basename $file _removedDuplicates.bam)
 BASE=${FBASE%_removedDuplicates.bam}
 
 time gatk BaseRecalibrator \
-  -I ${basedir}_removedDuplicates/${BASE}_removedDuplicates.bam \
+  -I ${basedir}removed_duplicates/${BASE}_removedDuplicates.bam \
   --known-sites ${basedir}noto_all_invd.vcf \
   -O ${basedir}${BASE}_recal_data.table \
   -R ${ref_genome}
