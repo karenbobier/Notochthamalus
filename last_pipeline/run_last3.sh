@@ -19,9 +19,9 @@ module load LAST/959-foss-2018a
 module load SAMtools/1.9-foss-2016b
 module load BCFtools/1.9-foss-2016b
 
-mkdir /scratch/keb27269/noto/last/consensus/
+mkdir /scratch/keb27269/noto/last/multiallelic/
 
-samtools mpileup -uf /scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds sortARI4.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARI4.fq
+samtools mpileup -uf /scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds sortARI4.bam | bcftools call -m | vcfutils.pl vcf2fq > multiallelic/ARI4.fq
 
 samtools mpileup -uf /scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds sortARI6.bam | bcftools call -c | vcfutils.pl vcf2fq > consensus/ARI6.fq
 
