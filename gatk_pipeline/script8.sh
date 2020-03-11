@@ -37,19 +37,19 @@ ref_genome="/scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds.fasta"
 ##########################################
 #recalibrate base quality scores in all samples to mask consensus variants
 ##############################################################################
-for file in ${basedir}removed_duplicates/*_removedDuplicates.bam
-do
-
-FBASE=$(basename $file _removedDuplicates.bam)
-BASE=${FBASE%_removedDuplicates.bam}
-
-time gatk BaseRecalibrator \
-  -I ${basedir}removed_duplicates/${BASE}_removedDuplicates.bam \
-  --known-sites ${basedir}noto_all_invd.vcf \
-  -O ${basedir}${BASE}_recal_data.table \
-  -R ${ref_genome}
-
-done
+# for file in ${basedir}removed_duplicates/*_removedDuplicates.bam
+# do
+#
+# FBASE=$(basename $file _removedDuplicates.bam)
+# BASE=${FBASE%_removedDuplicates.bam}
+#
+# time gatk BaseRecalibrator \
+#   -I ${basedir}removed_duplicates/${BASE}_removedDuplicates.bam \
+#   --known-sites ${basedir}noto_all_invd.vcf \
+#   -O ${basedir}${BASE}_recal_data.table \
+#   -R ${ref_genome}
+#
+# done
 ################################################################
 #apply BQSR ro bam files
 ################################################################
@@ -64,7 +64,7 @@ BASE=${FBASE%_removedDuplicates.bam}
 gatk ApplyBQSR \
   -R ${ref_genome} \
   -I ${basedir}removed_duplicates/${BASE}_removedDuplicates.bam \
-  -bsqr ${basedir}${BASE}_recal_data.table \
+  -bqsr ${basedir}${BASE}_recal_data.table \
   -O ${basedir}recalibrated/${BASE}_recalibrated.bam
 
 done
