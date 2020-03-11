@@ -64,3 +64,10 @@ time gatk CombineGVCFs \
          -R ${ref_genome} \
          --variant ${basedir}noto_all_invd.g.vcf \
          -O ${basedir}noto_all_invd.vcf
+         
+##################################################################################################
+###zip and index vcf
+##################################################################################################
+cat noto_all_invd.vcf | bgzip -c > noto_all_invd.vcf.gz
+tabix noto_all_invd.vcf.gz
+
