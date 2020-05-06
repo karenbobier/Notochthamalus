@@ -73,7 +73,7 @@ echo "time gatk HaplotypeCaller \
 -ERC GVCF \
 -I ${basedir}removed_duplicates/${BASE}_removedDuplicates.bam \
 -ploidy 2 \
-‐dontUseSoftClippedBases \
+--dont-use-soft-clipped-bases \
 -sample-name ${BASE} \
 ‐stand_call_conf 20.0 ‐stand_emit_conf 20.0 \
 -O ${basedir}gvcfs_rna/${BASE}_haplotypes.g.vcf" >> ${OUT}
