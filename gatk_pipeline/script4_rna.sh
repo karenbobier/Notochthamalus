@@ -61,7 +61,7 @@ BASE=${FBASE%_removedDuplicates.bam}
 OUT="${BASE}_gatk2.sh"
 echo "#!/bin/bash" >> ${OUT}
 echo "#PBS -N ${BASE}_gatk2" >> ${OUT}
-echo "#PBS -l walltime=72:00:00" >> ${OUT}
+echo "#PBS -l walltime=4:00:00:00" >> ${OUT}
 echo "#PBS -l nodes=1:ppn=1:HIGHMEM" >> ${OUT}
 echo "#PBS -q highmem_q" >> ${OUT}
 echo "#PBS -l mem=200gb" >> ${OUT}
