@@ -75,7 +75,7 @@ echo "time gatk HaplotypeCaller \
 -ploidy 2 \
 --dont-use-soft-clipped-bases \
 -sample-name ${BASE} \
-‐stand_emit_conf 20.0 \
+-‐stand_emit_conf 20.0 \
 -O ${basedir}gvcfs_rna/${BASE}_haplotypes.g.vcf" >> ${OUT}
 qsub ${OUT}
 
