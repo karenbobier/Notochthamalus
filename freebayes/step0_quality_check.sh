@@ -18,7 +18,10 @@ for fq in ../1_data/*.fastq.gz; do
   ln -s $fq
 done
 
-module load  parallel/20200422-GCCcore-8.3.0
+#module load  parallel/20200422-GCCcore-8.3.0
 module load FastQC/0.11.8-Java-11
 
-parallel "fastqc {}"" ::: *.fastq
+for file in *.fastq.gz
+do
+fastqc $file -t 6 -o ./
+done
