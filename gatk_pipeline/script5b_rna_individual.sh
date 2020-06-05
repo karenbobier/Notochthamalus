@@ -38,7 +38,7 @@ do
 FBASE=$(basename $file .rna.vcf)
 BASE=${FBASE%.bam}
 # separate indels
-vcftools --vcf $file --keep-only-indels --recode --recode-INFO-all --out ${basedir}gvcfs_rna${BASE}output_indels_only
+vcftools --vcf $file --keep-only-indels --recode --recode-INFO-all --out ${basedir}gvcfs_rna/${BASE}output_indels_only
 # separate SNPs
-vcftools --vcf $file --remove-indels --recode --recode-INFO-all --out ${basedir}gvcfs_rna${BASE}output_snps_only
+vcftools --vcf $file --remove-indels --recode --recode-INFO-all --out ${basedir}gvcfs_rna/${BASE}output_snps_only
 done
