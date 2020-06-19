@@ -2,7 +2,7 @@
 #PBS -q  highmem_q
 #PBS -N noto_gakt1
 #PBS -l nodes=1:ppn=1
-#PBS -l walltime=6:00:00:00
+#PBS -l walltime=1:00:00
 #PBS -l mem=50gb
 #PBS -M keb27269@uga.edu
 #PBS -m abe
@@ -34,6 +34,7 @@ module load ${GATK_module}
 
 #set path to reference genome (noto transcritome cds file)
 ref_genome="/scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.cds.fasta"
+#samtools faidx ${ref_genome}
 
 #create a .dict file for cds reference
 #java -Xmx20g -classpath "/usr/local/apps/eb/picard/2.4.1-Java-1.8.0_144" -jar  \
