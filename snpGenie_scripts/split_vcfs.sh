@@ -21,8 +21,15 @@ sequence_ids=$(cat ${file})
 # head -n 35 noto_all_invd.rna.vcf > vcf_head.txt
 # grep '#CHROM' noto_all_invd.rna.vcf >> vcf_head.txt
 
+
+# for ID in $sequence_ids
+#   do
+#   grep $ID noto_all_invd.rna.vcf > ./temp_variants/$ID.temp.vcf
+#   cat vcf_head.txt ./temp_variants/$ID.temp.vcf > ./variants/$ID.vcf
+# done
+
 for ID in $sequence_ids
   do
-  grep $ID noto_all_invd.rna.vcf > ./temp_variants/$ID.temp.vcf
-  cat vcf_head.txt ./temp_variants/$ID.temp.vcf > ./variants/$ID.vcf
+  grep $ID noto_all_invd.rna_edit.vcf > ./temp_variants/$ID.temp.vcf
+  cat vcf_head.txt ./temp_variants/$ID.temp.vcf > ./variants_rna_edit/$ID.vcf
 done
