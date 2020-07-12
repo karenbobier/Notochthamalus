@@ -39,22 +39,31 @@ ref_genome="/scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.mRNA.fasta"
 
 #combine vcf files into one
 
-time gatk CombineGVCFs \
--O ${basedir}noto_all_invd.rna_edit.g.vcf \
--R ${ref_genome} \
---variant ${basedir}gvcfs_rna_edit/ARI4_haplotypes.g.vcf \
---variant ${basedir}gvcfs_rna_edit/ARI6_haplotypes.g.vcf \
---variant ${basedir}gvcfs_rna_edit/ARI10_haplotypes.g.vcf \
---variant ${basedir}gvcfs_rna_edit/ARI11_haplotypes.g.vcf \
---variant ${basedir}gvcfs_rna_edit/ARI12_haplotypes.g.vcf \
---variant ${basedir}gvcfs_rna_edit/ARI102_haplotypes.g.vcf \
---variant ${basedir}gvcfs_rna_edit/ARG10_haplotypes.g.vcf \
---variant ${basedir}gvcfs_rna_edit/ARG18_haplotypes.g.vcf \
---variant ${basedir}gvcfs_rna_edit/ARG19_haplotypes.g.vcf \
---variant ${basedir}gvcfs_rna_edit/ARG21_haplotypes.g.vcf \
---variant ${basedir}gvcfs_rna_edit/ARG25_haplotypes.g.vcf \
---variant ${basedir}gvcfs_rna_edit/ARG27_haplotypes.g.vcf \
---variant ${basedir}gvcfs_rna_edit/ARG29_haplotypes.g.vcf
+# time gatk CombineGVCFs \
+# -O ${basedir}noto_all_invd.rna_edit.g.vcf \
+# -R ${ref_genome} \
+# --variant ${basedir}gvcfs_rna_edit/ARI4_haplotypes.g.vcf \
+# --variant ${basedir}gvcfs_rna_edit/ARI6_haplotypes.g.vcf \
+# --variant ${basedir}gvcfs_rna_edit/ARI10_haplotypes.g.vcf \
+# --variant ${basedir}gvcfs_rna_edit/ARI11_haplotypes.g.vcf \
+# --variant ${basedir}gvcfs_rna_edit/ARI12_haplotypes.g.vcf \
+# --variant ${basedir}gvcfs_rna_edit/ARI102_haplotypes.g.vcf \
+# --variant ${basedir}gvcfs_rna_edit/ARG10_haplotypes.g.vcf \
+# --variant ${basedir}gvcfs_rna_edit/ARG18_haplotypes.g.vcf \
+# --variant ${basedir}gvcfs_rna_edit/ARG19_haplotypes.g.vcf \
+# --variant ${basedir}gvcfs_rna_edit/ARG21_haplotypes.g.vcf \
+# --variant ${basedir}gvcfs_rna_edit/ARG25_haplotypes.g.vcf \
+# --variant ${basedir}gvcfs_rna_edit/ARG27_haplotypes.g.vcf \
+# --variant ${basedir}gvcfs_rna_edit/ARG29_haplotypes.g.vcf
+
+###################################################################################################
+### Jointly genotype samples to identify consensus sequences
+###################################################################################################
+
+ time gatk GenotypeGVCFs \
+         -R ${ref_genome} \
+         --variant ${basedir}noto_all_invd.rna_edit.g.vcf \
+         -O ${basedir}noto_all_invd.rna_edit.vcf
 
 # ###################################################################################################
 # ### EDIT GENOTYPE INDIVIDUAL SAMPLES not Jointly genotype samples to identify consensus sequences
