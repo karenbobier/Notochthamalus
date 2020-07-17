@@ -35,5 +35,5 @@ sequence_ids=$(cat ${file})
 snp_genie_path="/home/keb27269/projects/SNPGenie/snpgenie.pl"
 for ID in $sequence_ids
   do
-    $snp_genie_path --vcfformat=1 --snpreport="./variants_rna_edit/$ID_revcom.vcf" --fastafile="./rev_com_fastas/noto_1.5.ORP_$ID_revcom.fasta" --gtffile="./gff_files/$ID_revcom.gtf"  --outdir="./snp_genie_outputs_ORP/rev_com/$ID/"
+    $snp_genie_path --vcfformat=1 --snpreport="./variants_rna_edit/$ID_revcom.vcf" --fastafile="./rev_com_fastas/noto_1.5.ORP_$ID_revcom.fasta" --gtffile="./gff_files/$ID_revcom.gtf"  --outdir="$basedir/snp_genie_outputs_ORP/rev_com/$ID/"
 done
