@@ -1,13 +1,13 @@
 #PBS -S /bin/bash
 #PBS -q highmem_q
-#PBS -N noto_split_vcf
+#PBS -N noto_snpgenie
 #PBS -l nodes=1:ppn=1
 #PBS -l walltime=20:00:00:00
 #PBS -l mem=100gb
 #PBS -M keb27269@uga.edu
 #PBS -m abe
-#PBS -o $HOME/noto_split_vcf.out.$PBS_JOBID
-#PBS -e $HOME/noto_split_vcf.err.$PBS_JOBID
+#PBS -o $HOME/noto_snpgenie.out.$PBS_JOBID
+#PBS -e $HOME/noto_snpgenie.err.$PBS_JOBID
 
 
 basedir="/scratch/keb27269/noto/snpGenie_test"
@@ -35,5 +35,5 @@ sequence_ids=$(cat ${file})
 snp_genie_path="/home/keb27269/projects/SNPGenie/snpgenie.pl"
 for ID in $sequence_ids
   do
-    $snp_genie_path --vcfformat=1 --snpreport="./variants_rna_edit/$ID_revcom.vcf" --fastafile="./rev_com_fastas/noto_1.5.ORP_$ID_revcom.fasta" --gtffile="./gff_files/$ID_revcom.gtf"  --outdir="$basedir/snp_genie_outputs_ORP/rev_com/$ID/"
+    $snp_genie_path --vcfformat=1 --snpreport="./variants_rna_edit/${ID}_revcom.vcf" --fastafile="./rev_com_fastas/noto_1.5.ORP_${ID}_revcom.fasta" --gtffile="./gff_files/${ID}_revcom.gtf"  --outdir="$basedir/snp_genie_outputs_ORP/rev_com/$ID/"
 done
