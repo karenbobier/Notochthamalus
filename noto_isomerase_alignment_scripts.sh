@@ -50,6 +50,15 @@ ref_genome="/scratch/keb27269/noto/isomerase_stuff/semibalanus_MK955540.fasta"
 # #index the bam files
 # samtools index ${basedir}/reads_aligned_to_mpi_removedDuplicates.bam
 
+#samtools faidx ${ref_genome}
+
+# #create a .dict file for cds reference
+# java -Xmx20g -classpath "/usr/local/apps/eb/picard/2.4.1-Java-1.8.0_144" -jar  \
+# /usr/local/apps/eb/picard/2.4.1-Java-1.8.0_144/picard.jar CreateSequenceDictionary \
+#       R="/scratch/keb27269/noto/isomerase_stuff/semibalanus_MK955540.fasta" \
+#       O="/scratch/keb27269/noto/isomerase_stuff/semibalanus_MK955540.dict"/
+
+
 
 time gatk HaplotypeCaller -R $ref_genome \
 -ERC GVCF -I ${basedir}/reads_aligned_to_mpi_removedDuplicates.bam -ploidy 2 \
