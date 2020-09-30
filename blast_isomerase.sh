@@ -1,7 +1,7 @@
 
 
 module load BLAST+/2.9.0-foss-2018a-Python-2.7.14
-module load BLAST+/2.7.1-foss-2016b-Python-2.7.14
+
 #blastn -num_threads 4 -db <database file> -query <queary file>
 databasefile="/scratch/keb27269/noto/noto_1.5.ORP.fasta.transdecoder.mRNA.fasta"
 queryfile="/scratch/keb27269/noto/isomerase_stuff/semibalanus_MK955540.fasta"
