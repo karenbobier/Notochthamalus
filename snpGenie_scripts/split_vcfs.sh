@@ -33,3 +33,19 @@ for ID in $sequence_ids
   grep $ID noto_all_invd.rna_edit.vcf > ./temp_variants/$ID.temp.vcf
   cat vcf_head.txt ./temp_variants/$ID.temp.vcf > ./variants_rna_edit/$ID.vcf
 done
+
+#for snp vcfs by population
+file="cds_seq_ids.txt"
+sequence_ids=$(cat ${file})
+
+for ID in $sequence_ids
+  do
+  #grep $ID noto_all_invd.rna_edit_Arica_snps-only.vcf.recode.vcf > ./temp_variants/$ID.temp.snp.Arica.vcf
+  cat vcf_Arica_head.txt ./temp_variants/${ID}.temp.snp.Arica.vcf > ./variants_Arica_snps/${ID}_Arica_snps.vcf
+done
+
+for ID in $sequence_ids
+  do
+  grep $ID noto_all_invd.rna_edit_Argentina_snps-only.vcf.recode.vcf > ./temp_variants/$ID.temp.snp.Argentina.vcf
+  cat vcf_head.txt ./temp_variants/${ID}.temp.snp.Argentina.vcf > ./variants_Argentina_snps/${ID}_Argentina_snps.vcf
+done
