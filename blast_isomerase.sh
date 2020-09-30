@@ -14,4 +14,4 @@ database1="/scratch/keb27269/noto/isomerase_stuff/new_mRNA.fasta"
 makeblastdb -in $database1 -input_type fasta -dbtype nucl \
 -title mRNA_for_blastall -parse_seqids -out mRNA_for_blastall
 #run nucleotide blast
-blastn -db mRNA_for_blastall -query $queryfile -evalue 1E-5 -out /scratch/keb27269/noto/isomerase/blast_results.out
+blastn -db mRNA_for_blastall -query $queryfile -evalue 1E-5 > blast.out
