@@ -33,35 +33,38 @@ module load ${GATK_module}
 
 ref_genome="/scratch/keb27269/noto/isomerase_stuff/semibalanus_MK955540.fasta"
 
-# time java -Xmx20g -classpath "/usr/local/apps/eb/picard/2.16.0-Java-1.8.0_144" -jar \
-# /usr/local/apps/eb/picard/2.16.0-Java-1.8.0_144/picard.jar SortSam \
-#     INPUT=${basedir}/reads_aligned_to_mpi.sam \
-#     OUTPUT=${basedir}/reads_aligned_to_mpi.bam \
-#     SORT_ORDER=coordinate
-
-# #remove duplicates
-# time java -Xmx20g -classpath "/usr/local/apps/eb/picard/2.16.0-Java-1.8.0_144" -jar \
-# /usr/local/apps/eb/picard/2.16.0-Java-1.8.0_144/picard.jar MarkDuplicates \
-# REMOVE_DUPLICATES=TRUE \
-# I=${basedir}/reads_aligned_to_mpi.bam \
-# O=${basedir}/reads_aligned_to_mpi_removedDuplicates.bam \
-# M=${basedir}/reads_aligned_to_mpi_removedDupsMetrics.txt
-#
-# #index the bam files
-# samtools index ${basedir}/reads_aligned_to_mpi_removedDuplicates.bam
-
 #samtools faidx ${ref_genome}
+
+#bwa index ${ref_genome}
+BASE="ARG10"
+read_group="@RG\tID:${BASE}\tSM:${BASE}\tPL:illumina\tLB:${BASE}"
+bwa mem -M -t 6 -R ${read_group} ${ref_genome} /scratch/keb27269/noto/dna_reads/${BASE}_R1_001.fastq > ${basedir}/reads_aligned_to_mpi.sam
+
+time java -Xmx20g -classpath "/usr/local/apps/eb/picard/2.16.0-Java-1.8.0_144" -jar \
+/usr/local/apps/eb/picard/2.16.0-Java-1.8.0_144/picard.jar SortSam \
+    INPUT=${basedir}/reads_aligned_to_mpi.sam \
+    OUTPUT=${basedir}/reads_aligned_to_mpi.bam \
+    SORT_ORDER=coordinate
+
+#remove duplicates
+time java -Xmx20g -classpath "/usr/local/apps/eb/picard/2.16.0-Java-1.8.0_144" -jar \
+/usr/local/apps/eb/picard/2.16.0-Java-1.8.0_144/picard.jar MarkDuplicates \
+REMOVE_DUPLICATES=TRUE \
+I=${basedir}/reads_aligned_to_mpi.bam \
+O=${basedir}/reads_aligned_to_mpi_removedDuplicates.bam \
+M=${basedir}/reads_aligned_to_mpi_removedDupsMetrics.txt
+
+#index the bam files
+samtools index ${basedir}/reads_aligned_to_mpi_removedDuplicates.bam
 
 # #create a .dict file for cds reference
 # java -Xmx20g -classpath "/usr/local/apps/eb/picard/2.4.1-Java-1.8.0_144" -jar  \
 # /usr/local/apps/eb/picard/2.4.1-Java-1.8.0_144/picard.jar CreateSequenceDictionary \
 #       R="/scratch/keb27269/noto/isomerase_stuff/semibalanus_MK955540.fasta" \
 #       O="/scratch/keb27269/noto/isomerase_stuff/semibalanus_MK955540.dict"/
-
-
-
+#
+#run haplotype caller
 time gatk HaplotypeCaller -R $ref_genome \
 -ERC GVCF -I ${basedir}/reads_aligned_to_mpi_removedDuplicates.bam -ploidy 2 \
---dont-use-soft-clipped-bases --standard-min-confidence-threshold-for-calling 20.0 \
+--dont-use-soft-clipped-bases -sample-name ARG10 --standard-min-confidence-threshold-for-calling 20.0 \
 -O ${basedir}/reads_aligned_to_mpi_ARG10_haplotypes.g.vcf
-#-sample-name ARG10 
