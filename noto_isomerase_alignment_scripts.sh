@@ -62,5 +62,5 @@ ref_genome="/scratch/keb27269/noto/isomerase_stuff/semibalanus_MK955540.fasta"
 
 time gatk HaplotypeCaller -R $ref_genome \
 -ERC GVCF -I ${basedir}/reads_aligned_to_mpi_removedDuplicates.bam -ploidy 2 \
---dont-use-soft-clipped-bases -sample-name ARG10 --standard-min-confidence-threshold-for-calling 20.0 \
+--dont-use-soft-clipped-bases --standard-min-confidence-threshold-for-calling 20.0 \ #-sample-name ARG10 
 -O ${basedir}/reads_aligned_to_mpi_ARG10_haplotypes.g.vcf
