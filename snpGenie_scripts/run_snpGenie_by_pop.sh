@@ -20,12 +20,18 @@ sequence_ids=$(cat ${file})
 #generate_seqs_from_VCF.py reference.fasta variants.vcf <number of seqs>
 module load Python/3.5.2-foss-2016b
 module load Biopython/1.68-foss-2016b-Python-3.5.2
+# for ID in $sequence_ids
+#   do
+#     /home/keb27269/projects/EBT/generate_seqs_from_VCF.py ${basedir}/reference_fastas_ORP/noto_1.5.ORP_${ID}.fasta $basedir/variants_Arica/${ID}.Arica.vcf 12
+#     /home/keb27269/projects/EBT/generate_seqs_from_VCF.py ${basedir}/reference_fastas_ORP/noto_1.5.ORP_${ID}.fasta $basedir/variants_Argentina/${ID}.Argentina.vcf 14
+# done
+#run for snp files
 for ID in $sequence_ids
   do
-    /home/keb27269/projects/EBT/generate_seqs_from_VCF.py ${basedir}/reference_fastas_ORP/noto_1.5.ORP_${ID}.fasta $basedir/variants_Arica/${ID}.Arica.vcf 12
-    /home/keb27269/projects/EBT/generate_seqs_from_VCF.py ${basedir}/reference_fastas_ORP/noto_1.5.ORP_${ID}.fasta $basedir/variants_Argentina/${ID}.Argentina.vcf 14
+    /home/keb27269/projects/EBT/generate_seqs_from_VCF.py ${basedir}/reference_fastas_ORP/noto_1.5.ORP_${ID}.fasta $basedir/variants_Arica_snps/${ID}.Arica_snps.vcf 12
+    /home/keb27269/projects/EBT/generate_seqs_from_VCF.py ${basedir}/reference_fastas_ORP/noto_1.5.ORP_${ID}.fasta $basedir/variants_Argentina_snps/${ID}.Argentina_snps.vcf 14
 done
-#
+
 # #move fasta files
 # for ID in $sequence_ids
 #   do
