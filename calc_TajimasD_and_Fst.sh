@@ -7,7 +7,7 @@ cd $basedir
 
 module load VCF-kit/0.1.6-foss-2016b-Python-2.7.14
 
-vk tajima 10000 --sliding  noto_all_invd.rna_edit_Argentina_snps-only.vcf.recode.vcf
+vk tajima 10000 --sliding  noto_all_invd.rna_edit_Argentina_snps-only.vcf.recode.vcf > ajimasD_sliding_Argentina.out
 vk tajima 10000 10000  noto_all_invd.rna_edit_Argentina_snps-only.vcf.recode.vcf > tajimasD_Argentina_10000.out
 
 vk tajima 10000 10000  noto_all_invd.rna_edit_Arica_snps-only.vcf.recode.vcf > tajimasD_Arica_10000.out
