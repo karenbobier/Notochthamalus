@@ -2,7 +2,7 @@
 #PBS -q  highmem_q
 #PBS -N noto_split_snp_vcf
 #PBS -l nodes=1:ppn=1
-#PBS -l walltime=1:00:00
+#PBS -l walltime=24:00:00
 #PBS -l mem=50gb
 #PBS -M keb27269@uga.edu
 #PBS -m abe
