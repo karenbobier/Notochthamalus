@@ -15,15 +15,15 @@ basedir="/scratch/keb27269/noto/snpGenie_test"
 cd $basedir
 
 file_plus="seq_ids_plus_strand2.txt"
-sequence_ids_plus=$(cat ${file})
+sequence_ids_plus=$(cat ${file_plus})
 for ID in $sequence_ids_plus
   do
   grep $ID noto_all_invd.rna_edit_output_snps_only.recode.vcf > ./temp_variants/$ID.temp.snp.vcf
   cat vcf_head.txt ./temp_variants/$ID.temp.snp.vcf > ./variants_snps_forward/$ID.snp.vcf
 done
 
-file_plus="seq_ids_minus_strand2.txt"
-sequence_ids_minus=$(cat ${file})
+file_minus="seq_ids_minus_strand2.txt"
+sequence_ids_minus=$(cat ${file_minus})
 for ID in $sequence_ids_minus
   do
   grep $ID noto_all_invd.rna_edit_output_snps_only.recode.vcf > ./temp_variants/$ID.temp.minus.snp.vcf
