@@ -22,5 +22,5 @@ module load spades/3.12.0-k_245
 python /usr/local/apps/gb/spades/3.12.0-k_245/bin/spades.py \
 -1 ${basedir}noto/dna_reads/Arg21_ATGTCA_L008_R1_001_val_1.fq \
 -2 ${basedir}noto/dna_reads/Arg21_ATGTCA_L008_R2_001_val_2.fq \
--o ${basedir}Semibalanus/spades_assembly/ \
+-o ${basedir}Notochthamalus/spades_assembly/ \
 -t 16 -m 250
