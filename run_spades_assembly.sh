@@ -37,7 +37,7 @@ ref_genome="/scratch/keb27269/Semibalanus_genome/GCA_014673585.1_Sbal3.1_genomic
 # #make mummer plots
 module load MUMmer/3.23-foss-2016b
 #for spades
-nucmer -o $ref_genome ${basedir}Notochthamalus/spades_assembly/scaffolds.fasta -p ${basedir}Notochthamalus/outputfile_spades
+nucmer -mum -o $ref_genome ${basedir}Notochthamalus/spades_assembly/scaffolds.fasta -p ${basedir}Notochthamalus/outputfile_spades
 
 delta-filter -1 ${basedir}Notochthamalus/outputfile_spades.delta > ${basedir}Notochthamalus/outputfile_spades.1delta
 
