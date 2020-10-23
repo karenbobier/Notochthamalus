@@ -26,27 +26,53 @@ module load Biopython/1.68-foss-2016b-Python-3.5.2
 #     /home/keb27269/projects/EBT/generate_seqs_from_VCF.py ${basedir}/reference_fastas_ORP/noto_1.5.ORP_${ID}.fasta $basedir/variants_Argentina/${ID}.Argentina.vcf 14
 # done
 #run for snp files
+file="seq_ids_plus_strand2.txt"
+sequence_ids=$(cat ${file})
 for ID in $sequence_ids
   do
-    /home/keb27269/projects/EBT/generate_seqs_from_VCF.py ${basedir}/reference_fastas_ORP/noto_1.5.ORP_${ID}.fasta $basedir/variants_Arica_snps/${ID}_Arica_snps.vcf 12
-    /home/keb27269/projects/EBT/generate_seqs_from_VCF.py ${basedir}/reference_fastas_ORP/noto_1.5.ORP_${ID}.fasta $basedir/variants_Argentina_snps/${ID}_Argentina_snps.vcf 14
+    /home/keb27269/projects/EBT/generate_seqs_from_VCF.py ${basedir}/reference_fastas_ORP/noto_1.5.ORP_${ID}.fasta $basedir/variants_Arica_snps/${ID}*_Arica_snps.vcf 12
+    /home/keb27269/projects/EBT/generate_seqs_from_VCF.py ${basedir}/reference_fastas_ORP/noto_1.5.ORP_${ID}.fasta $basedir/variants_Argentina_snps/${ID}*_Argentina_snps.vcf 14
 done
 
-# #move fasta files
+file="seq_ids_minus_strand2.txt"
+sequence_ids=$(cat ${file})
 for ID in $sequence_ids
   do
-    mkdir $basedir/fastas_by_pop/${ID}_diploid
-    mv $basedir/variants_Arica/${ID}.Arica_nSeqs12.fasta $basedir/fastas_by_pop/${ID}_diploid/
-    mv $basedir/variants_Argentina/${ID}.Argentina_nSeqs14.fasta $basedir/fastas_by_pop/${ID}_diploid/
+    /home/keb27269/projects/EBT/generate_seqs_from_VCF.py ${basedir}/reference_fastas_ORP/noto_1.5.ORP_${ID}.fasta $basedir/variants_Arica_snps/${ID}*_Arica_snps.vcf 12
+    /home/keb27269/projects/EBT/generate_seqs_from_VCF.py ${basedir}/reference_fastas_ORP/noto_1.5.ORP_${ID}.fasta $basedir/variants_Argentina_snps/${ID}*_Argentina_snps.vcf 14
 done
+
+# # #move fasta files
+# file="seq_ids_plus_strand2.txt"
+# sequence_ids=$(cat ${file})
+# for ID in $sequence_ids
+#   do
+#     mkdir $basedir/fastas_by_pop/${ID}_diploid
+#     mv $basedir/variants_Arica_snps/${ID}.Arica_snps_nSeqs12.fasta $basedir/fastas_by_pop/${ID}_diploid/
+#     mv $basedir/variants_Argentina_snps/${ID}.Argentina_snps_nSeqs14.fasta $basedir/fastas_by_pop/${ID}_diploid/
+# done
 #
+#
+# file="seq_ids_minus_strand2.txt"
+# sequence_ids=$(cat ${file})
+# for ID in $sequence_ids
+#   do
+#     mkdir $basedir/fastas_by_pop/${ID}_diploid
+#     mv $basedir/variants_Arica_snps/${ID}.Arica_snps_nSeqs12.fasta $basedir/fastas_by_pop/${ID}_diploid/
+#     mv $basedir/variants_Argentina_snps/${ID}.Argentina_snps_nSeqs14.fasta $basedir/fastas_by_pop/${ID}_diploid/
+# done
+#
+#
+# #
 # ############################################################################
 # module load  Parallel-ForkManager/1.19-foss-2016b-Perl-5.24.1
 #
-# file="cds_seq_ids.txt"
+# file="seq_ids_plus_strand2.txt"
 # sequence_ids=$(cat ${file})
 #
 # #run snpgenie by populations
+# #note must be in the directory with the fasta files to run
+# #results will be written to working directory
 # #--gtf_file=<CDS_annotations>.gtf --num_bootstraps=10000 --procs_per_node=16
 #
 # for ID in $sequence_ids
@@ -54,3 +80,5 @@ done
 #     cd $basedir/fastas_by_pop/${ID}/
 #     /home/keb27269/projects/SNPGenie/snpgenie_between_group.pl --gtf_file="${basedir}/gff_files/${ID}.new.gtf" --num_bootstraps=10000 --procs_per_node=16
 # done
+#
+# #reverse complemnet minus strand fastas
