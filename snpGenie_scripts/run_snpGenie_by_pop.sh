@@ -2,7 +2,7 @@
 #PBS -q highmem_q
 #PBS -N noto_snpgenie_pop
 #PBS -l nodes=1:ppn=16
-#PBS -l walltime=20:00:00:00
+#PBS -l walltime=00:03:00:00
 #PBS -l mem=100gb
 #PBS -M keb27269@uga.edu
 #PBS -m abe
@@ -33,12 +33,12 @@ for ID in $sequence_ids
 done
 
 # #move fasta files
-# for ID in $sequence_ids
-#   do
-#     mkdir $basedir/fastas_by_pop/${ID}_diploid
-#     mv $basedir/variants_Arica/${ID}.Arica_nSeqs12.fasta $basedir/fastas_by_pop/${ID}_diploid/
-#     mv $basedir/variants_Argentina/${ID}.Argentina_nSeqs14.fasta $basedir/fastas_by_pop/${ID}_diploid/
-# done
+for ID in $sequence_ids
+  do
+    mkdir $basedir/fastas_by_pop/${ID}_diploid
+    mv $basedir/variants_Arica/${ID}.Arica_nSeqs12.fasta $basedir/fastas_by_pop/${ID}_diploid/
+    mv $basedir/variants_Argentina/${ID}.Argentina_nSeqs14.fasta $basedir/fastas_by_pop/${ID}_diploid/
+done
 #
 # ############################################################################
 # module load  Parallel-ForkManager/1.19-foss-2016b-Perl-5.24.1
