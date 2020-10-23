@@ -28,8 +28,8 @@ module load Biopython/1.68-foss-2016b-Python-3.5.2
 #run for snp files
 for ID in $sequence_ids
   do
-    /home/keb27269/projects/EBT/generate_seqs_from_VCF.py ${basedir}/reference_fastas_ORP/noto_1.5.ORP_${ID}.fasta $basedir/variants_Arica_snps/${ID}.Arica_snps.vcf 12
-    /home/keb27269/projects/EBT/generate_seqs_from_VCF.py ${basedir}/reference_fastas_ORP/noto_1.5.ORP_${ID}.fasta $basedir/variants_Argentina_snps/${ID}.Argentina_snps.vcf 14
+    /home/keb27269/projects/EBT/generate_seqs_from_VCF.py ${basedir}/reference_fastas_ORP/noto_1.5.ORP_${ID}.fasta $basedir/variants_Arica_snps/${ID}_Arica_snps.vcf 12
+    /home/keb27269/projects/EBT/generate_seqs_from_VCF.py ${basedir}/reference_fastas_ORP/noto_1.5.ORP_${ID}.fasta $basedir/variants_Argentina_snps/${ID}_Argentina_snps.vcf 14
 done
 
 # #move fasta files
