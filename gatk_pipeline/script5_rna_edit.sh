@@ -125,3 +125,10 @@ time gatk GenotypeGVCFs \
 # tabix  ${basedir}gvcfs_rna_edit/${BASE}.rna.vcf.gz
 #
 # done
+
+
+
+# separate indels
+vcftools --vcf noto_all_invd.rna_edit.vcf --keep-only-indels --recode --recode-INFO-all --out noto_all_invd.rna_edit_output_indels_only
+# separate SNPs
+vcftools --vcf noto_all_invd.rna_edit.vcf --remove-indels --recode --recode-INFO-all --out noto_all_invd.rna_edit_output_snps_only

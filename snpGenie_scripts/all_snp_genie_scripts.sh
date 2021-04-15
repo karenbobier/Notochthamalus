@@ -42,6 +42,22 @@ for ID in $sequence_ids
   cat vcf_head.txt ./temp_variants/$ID.temp.vcf > ./variants/$ID.vcf
 done
 
+file_plus="seq_ids_plus_strand2.txt"
+sequence_ids_plus=$(cat ${file})
+for ID in $sequence_ids_plus
+  do
+  grep $ID noto_all_invd.rna_edit_output_snps_only.recode.vcf > ./temp_variants/$ID.temp.snp.vcf
+  cat vcf_head.txt ./temp_variants/$ID.temp.snp.vcf > ./variants_snps_forward/$ID.snp.vcf
+done
+
+file_plus="seq_ids_minus_strand2.txt"
+sequence_ids_minus=$(cat ${file})
+for ID in $sequence_ids_minus
+  do
+  grep $ID noto_all_invd.rna_edit_output_snps_only.recode.vcf > ./temp_variants/$ID.temp.minus.snp.vcf
+  cat vcf_head.txt ./temp_variants/$ID.temp.minus.snp.vcf > ./variants_snps_revcom/$ID.snp.vcf
+done
+
 ##################################################################
 #convert gff3 to gtffile
 module load gffread/0.9.12-foss-2016b
@@ -69,13 +85,13 @@ module load seqkit/0.10.2_conda
 #mkdir $basedir/rev_com_fastas
 for ID in $sequence_ids
   do
-    seqkit fx2tab -l $basedir/reference_fastas_ORP/noto_1.5.ORP_$ID.fasta |cut -f 4 > $basedir/seq_length.txt
+    seqkit fx2tab -l $basedir/reference_fastas_ORP/noto_1.5.ORP_${ID}.fasta |cut -f 4 > $basedir/seq_length.txt
     seq_length=$(cat $basedir/seq_length.txt)
 
     cd $basedir/rev_com_fastas
-    $vcf2revcom $basedir/variants_rna_edit/$ID*.vcf $seq_length
-    $gtf2revcom $basedir/gff_files/$ID*.gtf $seq_length
-    $fasta2revcom $basedir/reference_fastas_ORP/noto_1.5.ORP_$ID.fasta
+    $vcf2revcom $basedir/variants_rna_edit/${ID}*.vcf $seq_length
+    $gtf2revcom $basedir/gff_files/${ID}*.gtf $seq_length
+    $fasta2revcom $basedir/reference_fastas_ORP/noto_1.5.ORP_${ID}.fasta
 done
 
 ################################################################

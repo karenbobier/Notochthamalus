@@ -24,3 +24,10 @@ goterms -iprlookup -f tsv -o ${basedir}interproscan/noto_pep_interproscan_out.ts
 
 # time sh interproscan.sh -appl PfamA -t n -i ${basedir}noto_1.5.ORP.fasta.transdecoder.mRNA.fasta \
 # goterms -iprlookup -f tsv -o $basedir/interproscan/noto_interproscan_out.tsv
+
+#write results for specific domains to new files
+#PF01238 PMI_typeI - Phosphomannose isomerase type I
+grep 'PF01238' noto_pep_interproscan_out.tsv  > noto_pep_ipr_PF01238.tsv
+#TetR_C_28 (PF17937)
+#AraC_binding (PF02311)
+#ScsC_N (PF18312)

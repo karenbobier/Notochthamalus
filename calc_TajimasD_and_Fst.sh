@@ -17,6 +17,7 @@ vk tajima 10000 10000 noto_all_invd.rna_edit_output_snps_only.recode.vcf > tajim
 
 
 module load pgdspider/2.1.1.5
+#this had not worked
 
 java -Xmx1024m -Xms512m -jar /usr/local/apps/gb/pgdspider/2.1.1.5/PGDSpider2.jar -inputfile ../noto_all_invd.rna_edit_output_snps_only.recode.vcf -inputformat VCF -outputfile ./noto_all_snps.genepop -outputformat GENEPOP -spid pgd_spider_vcf_to_genepop.spid
 
@@ -32,7 +33,7 @@ bcftools query -l $VCF | grep "ARG" > argen
 module load VCFtools/0.1.15-foss-2016b-Perl-5.24.1
 
 #calculate fst per snp
-vcftools --gzvcf ${VCF} \
+vcftools --gzvcf ${VCF} --recode --recode-INFO-all \
 --weir-fst-pop arica \
 --weir-fst-pop argen \
 --out ./arica_argen
@@ -42,3 +43,8 @@ vcftools --gzvcf ${VCF} \
 --weir-fst-pop arica --fst-window-size 10000 \
 --weir-fst-pop argen --fst-window-size 10000 \
 --out ./arica_argen_10000
+
+vcftools --vcf ${VCF} \
+--weir-fst-pop arica --fst-window-size 10000 \
+--weir-fst-pop argen --fst-window-size 10000 \
+--out ./arica_argen_10000_test
